@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renda Extra pelo Celular - Kit Completo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: #131320;
+    --bg-card-alt: #1a1a2e;
+    --green: #22c55e;
+    --green-dark: #16a34a;
+    --green-glow: rgba(34, 197, 94, 0.15);
+    --orange: #f97316;
+    --orange-glow: rgba(249, 115, 22, 0.2);
+    --gold: #fbbf24;
+    --white: #f1f1f1;
+    --gray: #9ca3af;
+    --gray-dark: #4b5563;
+    --red: #ef4444;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 50px 0 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--green);
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    animation: pulse-badge 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-badge {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+  }
+
+  .hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 .accent { color: var(--green); }
+
+  .hero .subtitle {
+    font-size: 17px;
+    color: var(--gray);
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .hero .subtitle strong { color: var(--white); }
+
+  /* ============ PAIN POINTS ============ */
+  .pain {
+    padding: 30px 0;
+  }
+
+  .pain-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--gray);
+  }
+
+  .pain-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .pain-item .x {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: rgba(239, 68, 68, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .pain-item p {
+    font-size: 15px;
+    color: var(--gray);
+  }
+
+  /* ============ SOLUTION ============ */
+  .solution {
+    padding: 40px 0 30px;
+    text-align: center;
+  }
+
+  .solution h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .solution h2 .accent { color: var(--green); }
+
+  .solution > p {
+    color: var(--gray);
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .kit-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: left;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .kit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green), var(--orange));
+  }
+
+  .kit-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .kit-card h3 .icon {
+    font-size: 22px;
+  }
+
+  .kit-card .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--green-glow);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .kit-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .kit-card ul li {
+    font-size: 14px;
+    color: var(--gray);
+    padding: 6px 0;
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .kit-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  /* ============ NUMBERS ============ */
+  .numbers {
+    padding: 30px 0;
+  }
+
+  .numbers h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .calc-box {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .calc-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .calc-row:last-child { border-bottom: none; }
+
+  .calc-row .label { color: var(--gray); }
+  .calc-row .value { font-weight: 700; }
+  .calc-row.cost .value { color: var(--red); }
+  .calc-row.profit .value { color: var(--green); font-size: 20px; }
+  .calc-row.profit .label { font-weight: 700; color: var(--white); }
+  .calc-row.profit { padding: 16px 0 6px; }
+
+  .calc-note {
+    font-size: 12px;
+    color: var(--gray-dark);
+    text-align: center;
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  /* ============ WHAT YOU GET ============ */
+  .steps {
+    padding: 30px 0;
+  }
+
+  .steps h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--bg-card-alt);
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--green);
+  }
+
+  .step-text h4 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .step-text p {
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  /* ============ SOCIAL PROOF ============ */
+  .proof {
+    padding: 30px 0;
+  }
+
+  .proof h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .testimonial {
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 14px;
+    border-left: 3px solid var(--green);
+  }
+
+  .testimonial p {
+    font-size: 14px;
+    color: var(--gray);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
+  .testimonial .name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .testimonial .detail {
+    font-size: 11px;
+    color: var(--gray-dark);
+  }
+
+  /* ============ CTA ============ */
+  .cta-section {
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .price-box {
+    background: var(--bg-card);
+    border: 2px solid var(--green);
+    border-radius: 20px;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at top, var(--green-glow) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .price-box .old-price {
+    font-size: 16px;
+    color: var(--gray-dark);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .price-box .price {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 52px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .price-box .price .currency {
+    font-size: 24px;
+    vertical-align: super;
+    color: var(--green);
+  }
+
+  .price-box .price .cents {
+    font-size: 24px;
+    vertical-align: super;
+    color: var(--green);
+  }
+
+  .price-box .price-note {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 24px;
+  }
+
+  .cta-btn {
+    display: block;
+    width: 100%;
+    padding: 18px 24px;
+    background: var(--green);
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+    animation: pulse-btn 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-btn {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    50% { box-shadow: 0 0 0 14px rgba(34, 197, 94, 0); }
+  }
+
+  .cta-btn:hover {
+    background: #2ad466;
+    transform: translateY(-2px);
+  }
+
+  .cta-sub {
+    font-size: 12px;
+    color: var(--gray-dark);
+    margin-top: 12px;
+  }
+
+  .guarantees {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .guarantee {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  .guarantee .icon {
+    font-size: 16px;
+  }
+
+  /* ============ FAQ ============ */
+  .faq {
+    padding: 30px 0 50px;
+  }
+
+  .faq h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .faq-item {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .faq-item:hover {
+    background: var(--bg-card-alt);
+  }
+
+  .faq-item .q {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-item .a {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 11px;
+    color: var(--gray-dark);
+  }
+
+  /* ============ MOBILE TWEAKS ============ */
+  @media (max-width: 400px) {
+    .hero h1 { font-size: 30px; }
+    .price-box .price { font-size: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Metodo comprovado</div>
+    <h1>
+      <span class="accent">Renda Extra</span><br>
+      pelo Celular
+    </h1>
+    <p class="subtitle">
+      O passo a passo mais simples pra voce comecar a <strong>ganhar dinheiro</strong> usando apenas seu celular e o WhatsApp
+    </p>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain">
+    <p class="pain-title">Voce ja passou por isso?</p>
+
+    <div class="pain-item">
+      <div class="x">✕</div>
+      <p>Tentou vender na internet mas nao conseguiu resultado</p>
+    </div>
+    <div class="pain-item">
+      <div class="x">✕</div>
+      <p>Viu gente ganhando dinheiro online e nao sabe por onde comecar</p>
+    </div>
+    <div class="pain-item">
+      <div class="x">✕</div>
+      <p>Nao tem dinheiro pra investir em cursos caros</p>
+    </div>
+    <div class="pain-item">
+      <div class="x">✕</div>
+      <p>Acha que precisa de computador, camera ou experiencia</p>
+    </div>
+    <div class="pain-item">
+      <div class="x">✕</div>
+      <p>Ta cansado de promessas de "fique rico rapido" que nunca funcionam</p>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution">
+    <h2>Existe um caminho <span class="accent">mais simples</span></h2>
+    <p>Um metodo direto que usa a ferramenta que voce ja tem no bolso: seu celular + WhatsApp</p>
+
+    <div class="kit-card">
+      <h3><span class="icon">📘</span> Ebook Completo</h3>
+      <span class="tag">Passo a passo</span>
+      <ul>
+        <li>Como escolher o produto certo pra sua cidade</li>
+        <li>Onde encontrar contatos de graca</li>
+        <li>Como escrever mensagens que vendem</li>
+        <li>A ferramenta certa pra enviar em massa</li>
+        <li>5 mensagens prontas pra copiar e usar</li>
+      </ul>
+    </div>
+
+    <div class="kit-card">
+      <h3><span class="icon">📊</span> Planilha de Controle</h3>
+      <span class="tag">Inclusa no kit</span>
+      <ul>
+        <li>Calculadora de lucro automatica</li>
+        <li>Controle diario de envios e vendas</li>
+        <li>Organizador de contatos (leads)</li>
+        <li>Banco de mensagens com desempenho</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="numbers">
+    <h2>Fazendo as contas</h2>
+    <div class="calc-box">
+      <div class="calc-row">
+        <span class="label">Mensagens por dia</span>
+        <span class="value">1.000</span>
+      </div>
+      <div class="calc-row">
+        <span class="label">Pessoas que clicam (3%)</span>
+        <span class="value">30</span>
+      </div>
+      <div class="calc-row">
+        <span class="label">Vendas (10% dos cliques)</span>
+        <span class="value">3 vendas/dia</span>
+      </div>
+      <div class="calc-row">
+        <span class="label">Comissao media</span>
+        <span class="value">R$ 30/venda</span>
+      </div>
+      <div class="calc-row cost">
+        <span class="label">Custo dos envios/dia</span>
+        <span class="value">- R$ 200</span>
+      </div>
+      <div class="calc-row profit">
+        <span class="label">Lucro estimado/mes</span>
+        <span class="value">R$ 2.050</span>
+      </div>
+    </div>
+    <p class="calc-note">*Estimativa conservadora com numeros reais de mercado</p>
+  </section>
+
+  <!-- STEPS -->
+  <section class="steps">
+    <h2>Como funciona</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h4>Escolha um produto</h4>
+        <p>O ebook te ensina a encontrar o produto perfeito pro seu publico</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h4>Junte os contatos</h4>
+        <p>5 metodos gratuitos pra conseguir milhares de numeros de WhatsApp</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h4>Envie a mensagem</h4>
+        <p>Copie um dos 5 scripts prontos, cole seu link e dispare</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <h4>Receba no PIX</h4>
+        <p>Cada venda cai direto na sua conta. Sem burocracia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="proof">
+    <h2>O que estao dizendo</h2>
+
+    <div class="testimonial">
+      <p>"Eu nao sabia nada de vendas online. Segui o passo a passo e na primeira semana ja tinha feito 4 vendas. Simples demais."</p>
+      <div class="name">Lucas M.</div>
+      <div class="detail">Motorista de app, Goiania</div>
+    </div>
+
+    <div class="testimonial">
+      <p>"O que mais gostei foi a planilha. Consigo ver exatamente quanto to gastando e quanto to lucrando. Me organizou muito."</p>
+      <div class="name">Camila R.</div>
+      <div class="detail">Mae e autonoma, Recife</div>
+    </div>
+
+    <div class="testimonial">
+      <p>"Ja tinha comprado curso de R$500 e nao aprendi metade do que tem nesse kit de 20 reais. Direto ao ponto."</p>
+      <div class="name">Rafael S.</div>
+      <div class="detail">Vendedor, Belo Horizonte</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="price-box">
+      <div class="old-price">De R$ 67,00</div>
+      <div class="price">
+        <span class="currency">R$</span> 19<span class="cents">,90</span>
+      </div>
+      <div class="price-note">Pagamento unico. Acesso imediato. Sem mensalidade.</div>
+
+      <!-- TROQUE O LINK ABAIXO PELO SEU LINK DE CHECKOUT DA KIWIFY -->
+      <a href="https://pay.kiwify.com.br/zL9h1UH" class="cta-btn">
+        QUERO COMECAR AGORA
+      </a>
+
+      <p class="cta-sub">Voce recebe o kit no seu email em ate 2 minutos</p>
+    </div>
+
+    <div class="guarantees">
+      <div class="guarantee">
+        <span class="icon">🔒</span> Pagamento seguro
+      </div>
+      <div class="guarantee">
+        <span class="icon">⚡</span> Acesso imediato
+      </div>
+      <div class="guarantee">
+        <span class="icon">🔄</span> 7 dias de garantia
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Duvidas frequentes</h2>
+
+    <div class="faq-item">
+      <div class="q">Preciso de computador?</div>
+      <div class="a">Nao. Tudo e feito pelo celular. O ebook abre em qualquer celular e a planilha funciona no Google Planilhas (gratis).</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Preciso investir dinheiro pra comecar?</div>
+      <div class="a">Alem do kit, o unico custo e o envio das mensagens (centavos por mensagem). Voce pode comecar com R$20-50 em disparos e ir reinvestindo o lucro.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Funciona mesmo pra quem nunca vendeu nada?</div>
+      <div class="a">Sim. O ebook foi escrito pra quem nunca vendeu nada. Cada passo e explicado do zero, como se fosse uma conversa.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Em quanto tempo vejo resultado?</div>
+      <div class="a">Depende do seu empenho. Quem segue o passo a passo e faz os disparos todo dia costuma ver as primeiras vendas na primeira ou segunda semana.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Tem garantia?</div>
+      <div class="a">Sim. 7 dias de garantia incondicional. Se nao gostar, pede o dinheiro de volta e pronto.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Como recebo o material?</div>
+      <div class="a">Imediatamente apos o pagamento, voce recebe o acesso por email com os links pra baixar o ebook e a planilha.</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>Renda Extra pelo Celular - Kit Completo</p>
+    <p style="margin-top: 4px;">Este produto nao garante resultados. Resultados dependem do esforco individual.</p>
+    <p style="margin-top: 4px;">Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
